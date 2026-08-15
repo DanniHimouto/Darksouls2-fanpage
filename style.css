@@ -200,3 +200,12 @@ footer .subtext {
     }
 }
 
+/* Estilo para as Imagens dos Cards */
+.card-img {
+    width: 100%;             /* Ocupa toda a largura do card */
+    height: 180px;           /* Define uma altura fixa igual para todas */
+    object-fit: cover;       /* Corta a imagem com precisão sem esticar ou achatar */
+    border-radius: 4px;      /* Bordas suavemente arredondadas */
+    margin-bottom: 15px;     /* Separa a imagem do título */
+    border: 1px solid var(--border-gold); /* Borda dourada discreta */
+}
