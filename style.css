@@ -17,6 +17,13 @@
 }
 
 body {
+    background-color: var(--bg-main);
+    background-image: url('imagens/fundo-drangleic.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--text-color);
     background-color: var(--bg-dark);
     color: var(--text-primary);
     font-family: var(--font-body);
@@ -105,6 +112,9 @@ body {
 
 /* ---Seção de Conteúdo (Cards) --- */
 .content-section {
+    background-color: rgba(11, 10, 10, 0.85);
+    padding: 70px 8%;
+    text-align: center;
     padding: 4rem 5%;
     max-width: 1200px;
     margin: 0 auto;
