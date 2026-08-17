@@ -143,6 +143,103 @@ body {
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
+summary {
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary h3 {
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+summary:hover h3 {
+    color: var(gold-light);
+    text-decoration: underline;
+}
+
+.class-content {
+    margin-top: 15px;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* ==========================================================================
+   AURA E INTERATIVIDADE DOS CARDS DE CLASSE
+   ========================================================================== */
+
+/* 1. Aura Padrão do Card (Fechado) */
+.class-card {
+    position: relative;
+    transition: all 0.4s ease;
+    /* Aura sutil dourada/sombria quando o card está fechado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 
+                0 0 15px rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Aura ao passar o mouse (Hover no card fechado) */
+.class-card:hover {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4), 
+                0 0 25px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.6);
+}
+
+/* 2. Aura Mágica em Destaque (Card Aberto / Clicado) */
+details[open] {
+    /* Troca a aura para um tom místico/azulado de feitiçaria quando aberto */
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.4), 
+                0 0 35px rgba(0, 140, 255, 0.25);
+    border-color: rgba(0, 217, 255, 0.7) !important;
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 3. Estilo do Título Clicável */
+summary {
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary h3 {
+    transition: color 0.3s ease;
+    display: inline-block;
+    margin: 0;
+}
+
+summary:hover h3 {
+    color: #ffd700;
+}
+
+/* Muda a cor do título quando o card está aberto para combinar com a nova aura */
+details[open] summary h3 {
+    color: #00d9ff;
+}
+
+/* 4. Resolução da Animação de Surgimento (CSS Transitions) */
+.class-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.4s ease-out;
+}
+
+/* Quando o detalhes está aberto, o conteúdo expande e aparece sempre que clicar */
+details[open] .class-content {
+    max-height: 500px; /* Altura suficiente para exibir a imagem e o texto */
+    opacity: 1;
+}
+
 .card:hover {
     transform: translatey(-5px);
     border-color: var(--border-gold);
